@@ -106,7 +106,16 @@
     height: 95%;
     border: none;
     width: 90%;
+    outline: none;
+    padding: 10px;
+    font-size: 15px;
+    color: white;
+    font-family: sans-serif;
+}
+
+.betinp:focus{
     border: none;
+    cursor: text;
 }
 
 .bet-amount h4{

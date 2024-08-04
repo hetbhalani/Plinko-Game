@@ -11,3 +11,7 @@ document.querySelector('.manual').addEventListener('click', function() {
         document.querySelector('.auto').style.backgroundColor = '#071d2a';
     
 });
+
+document.querySelector('.betinp').addEventListener('focus',function(){
+    this.select();
+});
