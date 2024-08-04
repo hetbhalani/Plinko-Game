@@ -48,3 +48,51 @@
     background-color: #071d2a;
     border-radius: 0px 10px 10px 0px;
 }
+
+.btns{
+    display: flex;
+    margin: auto;
+    margin-top: 5%;
+    height: 10%;
+    background-color: #071d2a;
+    width: 90%;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.manual{
+    height: 82%;
+    width: 46%;
+    background-color: #2f4553; 
+    color: white;
+    border: none; 
+    border-radius: 50px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  */
+    transition: background-color 0.2s;
+    font-weight: 600;
+}
+
+.auto{
+    height: 82%;
+    background-color: #071d2a;
+    width: 46%;
+    /* background-color: #2f4553;  */
+    color: white;
+    border: none; 
+    border-radius: 50px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.2s;
+    font-weight: 600;
+}
+
+/* .auto:hover {
+    background-color: #2f4553; 
+} */
+
+.auto.clicked {
+    background-color: #2f4553; /* Color after click */
+}
