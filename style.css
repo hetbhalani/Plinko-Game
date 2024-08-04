@@ -68,7 +68,7 @@
     color: white;
     border: none; 
     border-radius: 50px; 
-    font-size: 16px; 
+    font-size: 14px; 
     cursor: pointer; 
     /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  */
     transition: background-color 0.2s;
@@ -83,7 +83,7 @@
     color: white;
     border: none; 
     border-radius: 50px; 
-    font-size: 16px; 
+    font-size: 14px; 
     cursor: pointer; 
     transition: background-color 0.2s;
     font-weight: 600;
@@ -104,19 +104,22 @@
     margin-left: 5%;
     background-color: #0f212e;
     height: 95%;
-    border: none;
+    border: 3px solid #2f4553;
     width: 90%;
     outline: none;
     padding: 10px;
+    padding-right: 30px;
     font-size: 15px;
     color: white;
     font-family: sans-serif;
+    border-radius: 8px 0 0 8px;
+    /* border: none; */
 }
 
-.betinp:focus{
-    border: none;
-    cursor: text;
+.betinp:hover{
+    border: 3px solid #59666e;
 }
+
 
 .bet-amount h4{
     font-family: Arial, Helvetica, sans-serif;
@@ -124,16 +127,62 @@
     color: #b1bad3;
     margin-left: 5%;
     margin-bottom: -15px;
+    font-weight: 600;
 }
 
 .bet-input{
     display: flex;
     height: 50%;
     width: 100%;
-    /* background-color: #fff; */
+    position: relative;
 }
 
-.half, .dbl{
+.dbl{
     height: 95%;
     width: 20%;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #2f4553;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    color: white;
+}
+
+.half{
+    height: 95%;
+    width: 20%;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #2f4553;
+    border: none;
+    color: white;
+}
+
+.dbl:hover{
+    background-color: #557086;
+    transition: background-color 0.25s;
+}
+.half:hover{
+    background-color: #557086;
+    transition: background-color 0.25s;
+}
+
+.liti{
+    font-size: 25px;
+    padding-top: 3px;
+    height: 95%;
+    background-color: #2f4553;
+    color: #0f212e;
+    font-weight: 700;
+}
+
+.fa-bitcoin {
+    position: absolute;
+    right: 15px; 
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #FFD43B; 
+    padding-right: 90px;
+    font-size: large;
 }
