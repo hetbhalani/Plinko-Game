@@ -1,3 +1,5 @@
+let halfval = document.querySelector('.half');
+let dblval = document.querySelector('.dbl');
 
 document.querySelector('.auto').addEventListener('click', function() {
 
@@ -15,3 +17,15 @@ document.querySelector('.manual').addEventListener('click', function() {
 document.querySelector('.betinp').addEventListener('focus',function(){
     this.select();
 });
+
+halfval.addEventListener('click', function() {
+        let currentValue = parseFloat(document.querySelector('.betinp').value);
+        let newValue = currentValue / 2;
+        document.querySelector('.betinp').value = newValue.toFixed(6);
+})
+
+dblval.addEventListener('click', function() {
+        let currentValue = parseFloat(document.querySelector('.betinp').value);
+        let newValue = currentValue * 2;
+        document.querySelector('.betinp').value = newValue.toFixed(6);
+})
