@@ -89,10 +89,7 @@
     font-weight: 600;
 }
 
-/* .auto:hover {
+.auto:hover {
     background-color: #2f4553; 
-} */
-
-.auto.clicked {
-    background-color: #2f4553; /* Color after click */
 }
+
