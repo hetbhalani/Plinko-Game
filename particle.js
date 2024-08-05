@@ -1,8 +1,8 @@
 function Particle(x, y, r) { 
     var options = {
-        restitution: 0.2,   
-        friction: 0.1,
-        density: 1 
+        restitution: 0,   
+        friction: 1,
+        density: -2 
     }
     
     this.body = Bodies.circle(x, y, r, options);
@@ -11,7 +11,7 @@ function Particle(x, y, r) {
 }
 
 Particle.prototype.show = function() { 
-    fill(255);
+    fill(255,0,0);
     stroke(255);
     var pos = this.body.position;
     push();
