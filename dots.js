@@ -2,7 +2,7 @@ function Plinko(x, y, r) {
     var options = {
         isStatic: true,
         restitution: 0,
-        friction: 0.1
+        friction: 0
     }
     this.body = Bodies.circle(x, y, r, options);
     this.r = r;
@@ -10,7 +10,7 @@ function Plinko(x, y, r) {
 }
 
 Plinko.prototype.show = function() { 
-    fill(0,255,0);
+    fill(255);
     stroke(255);
     var pos = this.body.position;
     push();
