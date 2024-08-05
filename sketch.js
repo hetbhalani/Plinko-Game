@@ -45,6 +45,9 @@
 //         dots[i].show();
 //     }
 // }
+
+
+
 var Engine = Matter.Engine,
     World = Matter.World,
     Bodies = Matter.Bodies,
@@ -75,7 +78,7 @@ function createTriangleBoard() {
         for (let i = 0; i < numDotsInRow; i++) {
             var x = width / 2 + (i - (numDotsInRow - 1) / 2) * spacing;
             var y = 100 + j * spacing;
-            var p = new Plinko(x, y, 4);
+            var p = new Plinko(x, y, 5);
             dots.push(p);
         }
     }
@@ -89,14 +92,18 @@ function createTriangleBoard() {
 }
 
 function newParticle() {
-    var p = new Particle(width / 2, 50, 6);
+    var x = random(width * 0.45, width * 0.55, width * 0.50); 
+    var p = new Particle(x, 50, 8);
     particles.push(p);
 }
 
 function draw() {
-    if (frameCount % 10 == 0) {
-        newParticle();
-    }
+    // if (frameCount % 30 == 0) {
+    //     newParticle();
+    // }
+
+    document.querySelector('.btnofbet').addEventListener('click', newParticle);
+
     background(51);
     Engine.update(engine);
     for (let i = 0; i < particles.length; i++) {
@@ -122,7 +129,7 @@ Particle.prototype.isOffScreen = function() {
 function Boundary(x, y, w, h, a) {
     var options = {
         friction: 0,
-        restitution: 0.6,
+        restitution: 1,
         angle: a,
         isStatic: true
     };
