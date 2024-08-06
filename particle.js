@@ -2,7 +2,7 @@ function Particle(x, y, r) {
     var options = {
         restitution: 0.2,   
         friction: 1,
-        density: -2 
+        density: -2,
     }
     
     this.body = Bodies.circle(x, y, r, options);
