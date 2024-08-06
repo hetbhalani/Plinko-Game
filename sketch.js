@@ -61,6 +61,25 @@ var rows = 17;
 var startDots = 3;
 var gravityStrength = 0.4;
 
+let dropdown = document.querySelector('.rowdrop');
+rows = parseInt(dropdown.value);
+
+dropdown.addEventListener('change', function() {
+    rows = parseInt(this.value);
+    resetBoard();
+});
+
+function resetBoard() {
+
+    for (let dot of dots) {
+        World.remove(world, dot.body);
+
+    }
+    dots = [];
+
+    createTriangleBoard();
+}
+
 function setup() {
     let canvas = createCanvas(600, 560);
     canvas.parent('canvas');
@@ -96,8 +115,18 @@ function createTriangleBoard() {
 function newParticle() {
     var mean = width / 2;
     var sd = width / 50; 
-    var x = randomGaussian(mean, sd); 
-    var p = new Particle(x, 0, 6.5);
+    var x = randomGaussian(mean, sd);
+    let sizeOfDot
+    if(rows == 16||rows == 15 || rows == 14){
+        sizeOfDot = 7;
+    } 
+    else if(rows == 13||rows == 12 || rows == 11){
+        sizeOfDot = 8;
+    }
+    else if(rows == 10||rows == 9 || rows == 8){
+        sizeOfDot = 9;
+    }
+    var p = new Particle(x, 0, sizeOfDot);
     particles.push(p);
 }
 
