@@ -59,10 +59,10 @@ var particles = [];
 var dots = [];
 var rows = 16;
 var startDots = 3;
-var gravityStrength = 0.5;
+var gravityStrength = 0.4;
 
 function setup() {
-    let canvas = createCanvas(500, 550);
+    let canvas = createCanvas(650, 560);
     canvas.parent('canvas');
     engine = Engine.create();
     world = engine.world;
@@ -74,12 +74,13 @@ function setup() {
 
 function createTriangleBoard() {
     var spacing = width / (rows + startDots);
+    var verticalSpacing = 4;
     for (let j = 0; j < rows; j++) {
         var numDotsInRow = startDots + j;
         for (let i = 0; i < numDotsInRow; i++) {
             var x = width / 2 + (i - (numDotsInRow - 1) / 2) * spacing;
-            var y = 100 + j * spacing;
-            var p = new Plinko(x, y, 3);
+            var y = 35 + j * (spacing + verticalSpacing);
+            var p = new Plinko(x, y, 3.4);
             dots.push(p);
         }
     }
@@ -105,7 +106,7 @@ function draw() {
 
     document.querySelector('.btnofbet').addEventListener('click', newParticle);
 
-    background(51);
+    clear();
     Engine.update(engine);
     for (let i = 0; i < particles.length; i++) {
         particles[i].show();
