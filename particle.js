@@ -1,6 +1,6 @@
 function Particle(x, y, r) { 
     var options = {
-        restitution: 0,   
+        restitution: 0.2,   
         friction: 1,
         density: -2 
     }
@@ -12,7 +12,7 @@ function Particle(x, y, r) {
 
 Particle.prototype.show = function() { 
     fill(255,0,0);
-    stroke(255);
+    stroke(255,0,0);
     var pos = this.body.position;
     push();
     translate(pos.x, pos.y);
