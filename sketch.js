@@ -62,7 +62,8 @@ var startDots = 3;
 var gravityStrength = 0.5;
 
 function setup() {
-    createCanvas(600, 800);
+    let canvas = createCanvas(500, 550);
+    canvas.parent('canvas');
     engine = Engine.create();
     world = engine.world;
 
@@ -78,22 +79,22 @@ function createTriangleBoard() {
         for (let i = 0; i < numDotsInRow; i++) {
             var x = width / 2 + (i - (numDotsInRow - 1) / 2) * spacing;
             var y = 100 + j * spacing;
-            var p = new Plinko(x, y, 5);
+            var p = new Plinko(x, y, 3);
             dots.push(p);
         }
     }
     
     // Add walls
-    var wallThickness = 10;
-    var leftWall = new Boundary(0, height / 2, wallThickness, height, 0);
-    var rightWall = new Boundary(width, height / 2, wallThickness, height, 0);
-    var bottom = new Boundary(width / 2, height, width, wallThickness, 0);
-    dots.push(leftWall, rightWall, bottom);
-}
+    // var wallThickness = 10;
+    // var leftWall = new Boundary(0, height / 2, wallThickness, height, 0);
+    // var rightWall = new Boundary(width, height / 2, wallThickness, height, 0);
+    // var bottom = new Boundary(width / 2, height, width, wallThickness, 0);
+    // dots.push(leftWall, rightWall, bottom);
+} 
 
 function newParticle() {
     var x = random(width * 0.45, width * 0.55, width * 0.50); 
-    var p = new Particle(x, 50, 8);
+    var p = new Particle(x, 50, 6);
     particles.push(p);
 }
 
