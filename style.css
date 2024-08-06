@@ -11,13 +11,13 @@
 }
 
 .nav{
-    height: 5rem;
+    height: 3.5rem;
     width: 100%;
     /* border: 2px solid orange; */
     background-color: #1a2c38;
     background-image: url("https://see.fontimg.com/api/renderfont4/PxlZ/eyJyIjoiZnMiLCJoIjoxMTAsInciOjEyNTAsImZzIjo4OCwiZmdjIjoiI0ZGRkZGRiIsImJnYyI6IiMzNTNENEIiLCJ0IjoxfQ/UGxpbmtv/quick-kiss-personal-use.png");
     background-repeat: no-repeat;
-    background-size: 150px 50px;
+    background-size: 130px 40px;
     background-position: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     z-index: 10;
