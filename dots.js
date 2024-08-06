@@ -1,7 +1,7 @@
 function Plinko(x, y, r) { 
     var options = {
         isStatic: true,
-        restitution: 0,
+        restitution: 1,
         friction: 0
     }
     this.body = Bodies.circle(x, y, r, options);
