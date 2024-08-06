@@ -57,12 +57,12 @@ var engine;
 var world;
 var particles = [];
 var dots = [];
-var rows = 16;
+var rows = 17;
 var startDots = 3;
 var gravityStrength = 0.4;
 
 function setup() {
-    let canvas = createCanvas(650, 560);
+    let canvas = createCanvas(600, 560);
     canvas.parent('canvas');
     engine = Engine.create();
     world = engine.world;
@@ -80,7 +80,7 @@ function createTriangleBoard() {
         for (let i = 0; i < numDotsInRow; i++) {
             var x = width / 2 + (i - (numDotsInRow - 1) / 2) * spacing;
             var y = 35 + j * (spacing + verticalSpacing);
-            var p = new Plinko(x, y, 3.4);
+            var p = new Plinko(x, y, 3.2);
             dots.push(p);
         }
     }
@@ -94,8 +94,10 @@ function createTriangleBoard() {
 } 
 
 function newParticle() {
-    var x = random(width * 0.45, width * 0.55, width * 0.50); 
-    var p = new Particle(x, 50, 6);
+    var mean = width / 2;
+    var sd = width / 50; 
+    var x = randomGaussian(mean, sd); 
+    var p = new Particle(x, 0, 6.5);
     particles.push(p);
 }
 
@@ -112,6 +114,7 @@ function draw() {
         particles[i].show();
         if (particles[i].isOffScreen()) {
             World.remove(world, particles[i].body);
+            
             particles.splice(i, 1);
             i--;
         }
@@ -121,13 +124,13 @@ function draw() {
     }
 }
 
-// Add this method to the Particle class
+
 Particle.prototype.isOffScreen = function() {
     var pos = this.body.position;
     return pos.y > height + 50;
 };
 
-// New Boundary class for walls
+
 function Boundary(x, y, w, h, a) {
     var options = {
         friction: 0,
