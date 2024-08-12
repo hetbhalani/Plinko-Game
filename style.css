@@ -11,7 +11,7 @@
 }
 
 .nav{
-    height: 3.5rem;
+    height: 3.7rem;
     width: 100%;
     /* border: 2px solid orange; */
     background-color: #1a2c38;
@@ -19,7 +19,7 @@
     background-repeat: no-repeat;
     background-size: 130px 40px;
     background-position: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     z-index: 10;
 }
 
@@ -285,4 +285,3 @@ option {
 .btnofbet:hover{
     background-color:rgba(31, 255, 32);
 }
-
