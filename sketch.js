@@ -92,14 +92,14 @@ function setup() {
 }
 
 function createTriangleBoard() {
-    var spacing = width / (rows + startDots);
-    var verticalSpacing = 4;
+    var spacing = (width / (rows + startDots))*1.11;
+    var verticalSpacing = 1;
     for (let j = 0; j < rows; j++) {
         var numDotsInRow = startDots + j;
         for (let i = 0; i < numDotsInRow; i++) {
             var x = width / 2 + (i - (numDotsInRow - 1) / 2) * spacing;
             var y = 35 + j * (spacing + verticalSpacing);
-            var p = new Plinko(x, y, 3.2);
+            var p = new Plinko(x, y, 3.5);
             dots.push(p);
         }
     }
@@ -116,7 +116,7 @@ function newParticle() {
     var mean = width / 2;
     var sd = width / 50; 
     var x = randomGaussian(mean, sd);
-    let sizeOfDot
+    let sizeOfDot;
     if(rows == 16||rows == 15 || rows == 14){
         sizeOfDot = 7;
     } 
